@@ -442,13 +442,13 @@
                 <div class="prediction-result w-full max-w-2xl p-6">
                     <br><br><br><br><br><br><br>
                     <h2 class="text-2xl text-gray-900">Result Diabetes Classification</h2>
-                    <img class="my-3" src={{ url_for('static', filename='/images/diabetes.jpg') }}  alt="iris flower">
+                    <img class="my-3" src={{ url_for('static', filename='/images/diabetes.jpg') }}  alt="diabetes">
                     <h2 class="mx-auto text-3xl text-center px-2 py-2 bg-gray-300 rounded rounded-full mt-5">{{result}}</h1>
                 </div>
                 {% else %}
                 <div class="prediction-result w-full max-w-2xl p-6">
                     <br><br><br><br><br><br><br>
-                    <img class="my-3" src={{ url_for('static', filename='/images/form_empty.svg') }}  alt="iris flower">
+                    <img class="my-3" src={{ url_for('static', filename='/images/form_empty.svg') }}  alt="waiting form">
                     <h4 style="text-align: center;">Data Belum Dimasukan</h4>
                     <p>Mohon isi data disamping</p>
                 </div>
