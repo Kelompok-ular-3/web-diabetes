@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+
+    <link rel="stylesheet" href={{ url_for('static', filename='/css/style.css') }}>
+    
+    <!-- Icon -->
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+
+</head>
+<body>
+
+    <header id="home">
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="navbar-brand">ULTI</a>
+                <div class="navbar-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+					<a href="#aplikasi">Prediction</a>
+                    <a href="#blog">News</a>
+                    <a href="#namaKelompok">Team</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="banner" id="particles-js">
+            <div class="container">
+                <h1 class="banner-title">
+                    Diabetes Prediction
+                </h1>
+                <p>Check conditions early and live healthier</p>      
+            </div>
+        </div>
+    </header>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <img src={{ url_for('static', filename='/images/gambar7.png') }} alt="gambar about">
+                </div>
+                <div class="about-text">
+                    <div class="title">
+                        <h2>About</h2>	
+                        <p>ulti application</p>
+                    </div>
+                    <p>This application was created to help users provide health information related to diabetes based on 
+						measurement values such as <i>Pregnancies</i>, <i>Glucose</i>, <i>Blood Pressure</i>, <i>Skin Thickness</i>, <i>Insulin</i>, <i>BMI</i>, 
+						<i>Diabetes Pedigree Function</i>, <i>Age</i>.</p>
+                    <p>The user only needs to provide a measurement value to be able to find out the condition experienced, which includes diabetes or not.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aplikasi">
+        <div class="bg-gray-200 min-h-screen pt-2 font-mono my-16">
+            <div class="container flex mx-auto">
+                <div class="inputs w-full max-w-2xl p-6">
+                    <h2 class="text-2xl text-gray-900">Diabetes Classification</h2>
+                    <form class="mt-6 border-t border-gray-400 pt-4" method="POST" action="">
+                        <div class='flex flex-wrap -mx-3 mb-6'>
+                            <div class='w-full md:w-full px-3 mb-6'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+                                    for='grid-text-3'>Pregnancies</label>
+                                <input type="text"
+                                    class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                    id='grid-text-3' type='text' placeholder='Masukkan total kehamilan (bulan)'
+                                    name="pregnancies" required>
+                            </div>
+                            <div class='w-full md:w-full px-3 mb-6'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+                                    for='grid-text-1'>Glucose</label>
+                                <input type="text"
+                                    class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                    id='grid-text-1' type='text' placeholder='Masukkan total glucose (hours)'
+                                    name="glucose" required>
+                            </div>
+                            <div class='w-full md:w-full px-3 mb-6'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+                                    for='grid-text-2'>Blood Pressure</label>
+                                <input type="text"
+                                    class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                    id='grid-text-2' type='text' placeholder='Masukkan tekanan darah (mm Hg)'
+                                    name="blood_pressure" required>
+                            </div>
+                            <div class='w-full md:w-full px-3 mb-6'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+                                    for='grid-text-2'>Skin Thickness</label>
+                                <input type="text"
+                                    class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                    id='grid-text-2' type='text' placeholder='Masukkan total skin thickness (mm)'
+                                    name="skin_thickness" required>
+                            </div>
+                            <div class='w-full md:w-full px-3 mb-6'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+                                    for='grid-text-2'>Insulin</label>
+                                <input type="text"
+                                    class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                    id='grid-text-2' type='text' placeholder='Masukkan insulin (mu U/ml)'
+                                    name="insulin" required>
+                            </div>
+                            <div class='w-full md:w-full px-3 mb-6'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+                                    for='grid-text-2'>BMI</label>
+                                <input type="text"
+                                    class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                    id='grid-text-2' type='text' placeholder='Masukkan total bmi (kg)'
+                                    name="bmi" required>
+                            </div>
+                            <div class='w-full md:w-full px-3 mb-6'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+                                    for='grid-text-2'>Diabetes Pedigree Function</label>
+                                <input type="text"
+                                    class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                    id='grid-text-2' type='text' placeholder='Masukkan diabetes pedigree function'
+                                    name="diabetes_pedigree_function" required>
+                            </div>
+                            <div class='w-full md:w-full px-3 mb-6'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+                                    for='grid-text-2'>Age</label>
+                                <input type="text"
+                                    class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                    id='grid-text-2' type='text' placeholder='Masukkan total umur (tahun)'
+                                    name="age" required>
+                            </div>
+                        </div>
+                        <div class="flex justify-end ">
+                            <button
+                                class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md hover:bg-gray-300"
+                                type="submit">Prediksi</button>
+                        </div>
+                </div>
+                </form>
+                {% if result is defined %}
+                <div class="prediction-result w-full max-w-2xl p-6">
+                    <br><br><br><br><br><br><br>
+                    <h2 class="text-2xl text-gray-900">Result Diabetes Classification</h2>
+                    <img class="my-3" src={{ url_for('static', filename='/images/diabetes.JPG') }}  alt="iris flower">
+                    <h2 class="mx-auto text-3xl text-center px-2 py-2 bg-gray-300 rounded rounded-full mt-5">{{result}}</h1>
+                </div>
+                {% else %}
+                <div class="prediction-result w-full max-w-2xl p-6">
+                    <br><br><br><br><br><br><br>
+                    <img class="my-3" src={{ url_for('static', filename='/images/form_empty.svg') }}  alt="iris flower">
+                    <h4 style="text-align: center;">Data Belum Dimasukan</h4>
+                    <p>Mohon isi data disamping</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="title">
+                <h2>News</h2>
+                <p>News about diabetes</p>
+            </div>
+
+            <div class="blog-content">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img  src={{ url_for('static', filename='/images/gambar10.png') }} alt="gambar who">
+                    </div>
+                    <div class="blog-title">
+                        <a href="https://www.who.int/health-topics/diabetes#tab=tab_1">Pengertian diabetes</a>
+                    </div>
+                </div>        
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src={{ url_for('static', filename='/images/gambar8.png') }} " alt="image ilustration">
+                    </div>
+                    <div class="blog-title">
+                        <a href="https://dinkes.kalbarprov.go.id/diabetes-sebabkan-kematian-tertinggi-di-indonesia-atasi-secepatnya-sebelum-terlambat/">Diabetes sebabkan kematian</a>
+                    </div>
+                </div>        
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src={{ url_for('static', filename='/images/gambar9.png') }} alt="">
+                    </div>
+                    <div class="blog-title">
+                        <a href="https://health.kompas.com/read/2020/07/26/060000468/5-makanan-penyebab-diabetes-yang-harus-diwaspadai?page=all">5 Makanan penyebab diabetes</a>
+                    </div>
+                </div>        
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src={{ url_for('static', filename='/images/gambar11.png') }} alt="">
+                    </div>
+                    <div class="blog-title">
+                        <a href="https://p2ptm.kemkes.go.id/informasi-p2ptm/penyakit-diabetes-melitus">Diabetes Melitus</a>
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </section>
+
+    <section id="namaKelompok" class="team">
+        <div class="bg-gray-200 min-h-screen pt-2 font-mono">
+            <div class="title">
+                <h2>Team</h2>
+                <p>This is our team</p>
+            </div>
+            <div class="wrapper">
+                <div class="members">
+                    <div class="team-mem">
+                        <img src={{ url_for('static', filename='/images/gambar12.png') }}>
+                        <h4>Indah Wardatunizza</h4>
+				        <p>Universitas Dian Nuswantoro</p>
+                        <p>Data Eksploration</p>
+                    </div>
+                    <div class="team-mem">
+                        <img src={{ url_for('static', filename='/images/gambar13.png') }}>
+                        <h4>Enrico Zada</h4>
+				        <p>Universitas Dian Nuswantoro</p>
+                        <p>Deployment</p>
+                    </div>
+                    <div class="team-mem">
+                        <img src={{ url_for('static', filename='/images/gambar13.png') }}>
+                        <h4>Julio Alifiansyah</h4>
+				        <p>Universitas Gadjah Mada</p>
+                        <p>Modeling</p>
+                    </div>
+                    <div class="team-mem">
+                        <img src={{ url_for('static', filename='/images/gambar13.png') }}>
+                        <h4>Muhammad Hakam Amndan</h4>
+				        <p>Universitas Diponegoro</p>
+                        <p>Deployment</p>
+                    </div>
+                    <div class="team-mem">
+                        <img src={{ url_for('static', filename='/images/gambar12.png') }}>
+                        <h4>Irma Binti Sya'idah</h4>
+				        <p>Universitas Ahmad Dahlan</p>
+                        <p>Deployment</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div> 
+
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#home"><i class="fas fa-home"></i></a>
+            <a href="#about"><i class="fas fa-address-card"></i></i></a>
+            <a href="#blog"><i class="far fa-newspaper"></i></a>
+            <a href="#aplikasi"><i class="fas fa-tablet"></i></a>
+        </div>
+        <span>ULTI Diabetes Prediction</span>
+    </footer>
+</body>
+<script src={{ url_for('static', filename='/js/script.js') }}></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+</html>
