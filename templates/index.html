@@ -185,6 +185,13 @@
         opacity: 0.8;
         }
 
+        .about-text > ol {
+        font-size: 1.1rem;
+        padding: 0.6rem 0;
+        opacity: 0.8;
+        margin: 2rem 0;
+        }
+
         /* kelompok */
         .wrapper{
         max-width: 1500px;
@@ -356,6 +363,20 @@
 						measurement values such as <i>Pregnancies</i>, <i>Glucose</i>, <i>Blood Pressure</i>, <i>Skin Thickness</i>, <i>Insulin</i>, <i>BMI</i>, 
 						<i>Diabetes Pedigree Function</i>, <i>Age</i>.</p>
                     <p>The user only needs to provide a measurement value to be able to find out the condition experienced, which includes diabetes or not.</p>
+                    
+                    <ol style="list-style-type: lower-alpha">
+                        <strong>references in providing measurement values are as follows:</strong>
+                        <li>Number of times pregnant</li>
+                        <li>Glucose: Plasma glucose concentration a 2 hours in an oral glucose tolerance test</li>
+                        <li>Blood Pressure: Diastolic blood pressure (mm Hg)</li>
+                        <li>Skin Thickness: Triceps skin fold thickness (mm)</li>
+                        <li>Insulin: 2-Hour serum insulin (mu U/ml)</li>
+                        <li>BMI: Body mass index (weight in kg/(height in m)^2)</li>
+                        <li>DiabetesPedigree Function: Diabetes pedigree function</li>
+                        <li>Age: Age (years)</li>
+                    </ol>
+                    
+
                 </div>
             </div>
         </div>
@@ -558,6 +579,34 @@
         <span>ULTI Diabetes Prediction</span>
     </footer>
 </body>
+
+<script>
+    const text = document.querySelector(".banner-title");
+    const strText = text.textContent;
+    const splitText = strText.split("");
+    text.textContent = "";
+    for(let i = 0; i < splitText.length; i++) {
+    text.innerHTML += "<span>" + splitText[i] + "</span>";
+    }
+
+    let char = 0;
+    let timer = setInterval(onTick, 50);
+
+    function onTick(){
+    const span = text.querySelectorAll('span')[char];
+    span.classList.add('fade');
+    char++ 
+    if(char === splitText.length){
+        complete();
+        return;
+    }
+    }
+
+    function complete(){
+    clearInterval(timer);
+    timer = null;
+    }
+</script>
 <script src={{ url_for('static', filename='/js/script.js') }}></script>
 <script src="https://cdn.tailwindcss.com"></script>
 
