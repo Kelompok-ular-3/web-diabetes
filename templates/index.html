@@ -470,11 +470,18 @@
                         </div>
                 </div>
                 </form>
-                {% if result is defined %}
+                {% if result == "Not Having Diabetes" %}
                 <div class="prediction-result w-full max-w-2xl p-6">
                     <br><br><br><br><br><br><br>
                     <h2 class="text-2xl text-gray-900">Result Diabetes Classification</h2>
-                    <img class="my-3" src={{ url_for('static', filename='/images/diabetes.jpg') }}  alt="diabetes">
+                    <img class="my-3" src={{ url_for('static', filename='/images/non_diabet.png') }}  alt="diabetes">
+                    <h2 class="mx-auto text-3xl text-center px-2 py-2 bg-gray-300 rounded rounded-full mt-5">{{result}}</h1>
+                </div>
+                {% elif result == "Having Diabetes" %}
+                <div class="prediction-result w-full max-w-2xl p-6">
+                    <br><br><br><br><br><br><br>
+                    <h2 class="text-2xl text-gray-900">Result Diabetes Classification</h2>
+                    <img class="my-3" src={{ url_for('static', filename='/images/diabet.png') }}  alt="diabetes">
                     <h2 class="mx-auto text-3xl text-center px-2 py-2 bg-gray-300 rounded rounded-full mt-5">{{result}}</h1>
                 </div>
                 {% else %}
